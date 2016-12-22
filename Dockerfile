@@ -1,12 +1,12 @@
 #
 # docker tag bjoernr/mediacccde:latest bjoernr/mediacccde:old; docker build -t bjoernr/mediacccde . && docker rmi bjoernr/mediacccde:old
 #
-FROM ruby:2.3.0
+FROM ruby:2.3.1
 RUN apt-get update -qq && apt-get install -y git nodejs redis-server vim-tiny
 RUN mkdir /opt/media
 WORKDIR /opt/media
 EXPOSE 3000
-RUN git clone https://github.com/voc/media.ccc.de.git .
+RUN git clone https://github.com/voc/voctoweb.git .
 
 #ADD Gemfile /opt/media/Gemfile
 #ADD Gemfile.lock /opt/media/Gemfile.lock
